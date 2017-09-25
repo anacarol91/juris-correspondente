@@ -9,173 +9,11 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  	<!-- css file
-  	<link rel="stylesheet" href="/style.css">-->
+  	<!-- css file -->
+  	<link rel="stylesheet" href="styles.css">
 
 	<title>Juris Correspondente</title>
 
-	<style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-      #map {
-        height: 200px;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      hr {
-	    margin-top: 1.5em;
-	    margin-bottom: 0.5em;
-	    border-style: solid;
-	    border-width: 0.4px;
-	    color:  #ccc;
-	}
-
-	  .btn {
-	  	padding: 0 1rem;
-	  }
-
-      #map-card {
-      	padding: 8px 0 0;
-      }
-
-      .comment-avatar {
-      	border-radius: 0;
-      	width: 60px !important;
-	    height: 60px !important;
-	    left: 0 !important;
-      }
-
-      .second-avatar {
-      	width: 48px !important;
-	    height: 48px !important;
-	    margin-left: 58px !important;
-      	border-radius: 0;
-      }
-
-      .second-comment {
-      	padding-left: 60px;
-      	margin-top: 20px;
-      }
-
-      .collection p {
-      	font-size: 0.9em;
-      	color: #a9a6a6; // TROCAR
-      }
-
-      .collection-item, .collection {
-      	border:  none !important;
-      }
-
-      .card-title {
-      	font-size: 1.0em !important;
-	    padding-left: 6% !important;
-	    font-weight: bold !important;
-      }
-
-      .container-fluid {
-      	padding:  25px 35px;
-      }
-
-      .hide-nav {
-	    display: none;
-	  }
-
-	  .show-nav {
-	  	display: block;
-	  }
-
-	  #nav-user {
-	  	display: flex;
-	    flex-flow: row nowrap;
-	    align-items: end;
-    	align-content: center;
-	    max-height: 64px;
-	    height: 64px;
-	  }
-
-	  #mini-avatar {
-	  	padding:  8px 10px 8px 45px;
-	  }
-
-	  #second-header .user-name {
-	  	margin: 20px 10px 0 0;
-	  }
-
-	  #second-header .oab {
-	  	margin: 0;
-    	padding-top: 5px;
-	  }
-
-	  .verified-icon {
-	  	font-size: 1em !important;
-	    margin-left: 5px;
-	    margin-top: 3px;
-	    color: blue; // TROCAR
-	  }
-
-	  #main-header nav {
-	  	height: 135px;
-	  }
-
-	  #id-user {
-	  	display: flex;
-	    flex-flow: row nowrap;
-	    align-items: baseline;
-	    height: 62px;
-	    margin-top: -5px;
-	  }
-
-	  #big-avatar {
-	  	align-self: end;
-	  	margin-left: 45px
-	  }
-
-	  #address {
-	  	display: flex;
-    	justify-content: space-between;
-    	padding-left: 190px;
-	  	background-color: white;
-	  	border-bottom: 1px solid #ccc;
-	    color: black;
-	  }
-
-	  #address p {
-	  	line-height: 20px;
-	    margin: 10px 0;
-	  }
-
-	  #main-header {
-	  	margin-bottom: 135px;
-	  }
-
-	  #main-header .user-name {
-	  	margin: 0 7px 0 25px;
-	  }
-
-	  #logo {
-	  	padding: 10px 0 0 45px;
-	  }
-
-	@media only screen and (max-width: 992px) {
-	  .fixed-aside {
-	      	position: initial;
-    		width: 100%;
-	    }
-	}
-
-	@media only screen and (min-width: 992px) {
-	  .fixed-aside {
-	      	position: fixed;
-    		width: 45%;
-	    }
-	}
-
-    </style>
 </head>
 
 <body ng-app="JurisApp" ng-controller="AppCtrl">
@@ -183,13 +21,13 @@
 <!-- HEADER -->
 	<div id="main-header" class="navbar-fixed show-nav">
 		<nav>
-			<div class="nav-wrapper">
+			<div class="nav-wrapper nav-dark">
 			  <a href="#" class="">
 			  	<img id="logo" ng-src="img/logotype.png" alt="">
 			  </a>
 			  <ul id="nav-mobile" class="right">
-			    <li><a class="waves-effect waves-light btn center">ENTRAR</a></li>
-			    <li><a class="waves-effect waves-light btn center">CADASTRAR</a></li>
+			    <li><a class="waves-effect waves-light btn center btn-entrar">ENTRAR</a></li>
+			    <li><a class="waves-effect waves-light btn center btn-cadastrar">CADASTRAR</a></li>
 			  </ul>
 			  <div id="id-user">
 			  	<img id="big-avatar" ng-src="img/pic_profile.png" alt="">
@@ -198,10 +36,10 @@
 			  	<i class="material-icons verified-icon">verified_user</i>
 			  </div>
 			  <div id="address">
-			  	<p class="hide-on-med-and-down"><span>Belo Horizonte</span> e mais 7 cidades<br>Av. do Contorno, 2605 - Santa Efigênia</p>
+			  	<p class="hide-on-med-and-down"><span style="font-weight: bold">Belo Horizonte</span> e mais 7 cidades<br>Av. do Contorno, 2605 - Santa Efigênia</p>
 			  	<ul class="right">
-			  		<li><a class="waves-effect waves-light btn"><i class="material-icons left">email</i>SOLICITAR DILIGÊNCIA</a></li>
-			  		<li><a class="waves-effect waves-light btn"><i class="material-icons left">stars</i>RECOMENDAR</a></li>
+			  		<li><a class="waves-effect waves-light btn btn-light"><i class="material-icons left">email</i>SOLICITAR DILIGÊNCIA</a></li>
+			  		<li><a class="waves-effect waves-light btn btn-light"><i class="material-icons left">stars</i>RECOMENDAR</a></li>
 			  	</ul>
 			  </div>
 			</div>
@@ -210,7 +48,7 @@
 
 	<div id="second-header" class="navbar-fixed hide-nav">
 	  <nav>
-	    <div class="nav-wrapper">
+	    <div class="nav-wrapper nav-light">
 	      <ul id="nav-user" class="left">
 		    <li><img id="mini-avatar" ng-src="img/pic_mini.png" alt=""></li>
 		    <li><h5 class="user-name">Tomaz Chavez</h5></li>
@@ -218,8 +56,8 @@
 		    <li> <i class="material-icons verified-icon">verified_user</i></li>
 		  </ul>
 	      <ul id="nav-mobile" class="right">
-	        <li class="hide-on-med-and-down"><a class="waves-effect waves-light btn"><i class="material-icons left">email</i>SOLICITAR DILIGÊNCIA</a></li>
-	        <li class="hide-on-med-and-down"><a class="waves-effect waves-light btn"><i class="material-icons left">stars</i>RECOMENDAR</a></li>
+	        <li class="hide-on-med-and-down"><a class="waves-effect waves-light btn btn-light"><i class="material-icons left">email</i>SOLICITAR DILIGÊNCIA</a></li>
+	        <li class="hide-on-med-and-down"><a class="waves-effect waves-light btn btn-light"><i class="material-icons left">stars</i>RECOMENDAR</a></li>
 	      </ul>
 	    </div>
 	  </nav>
@@ -241,7 +79,7 @@
 				        <li class="tab"><a href="#test6">SERVIÇOS PRESTADOS</a></li>
 				      </ul>
 				    </div>
-				    <div class="card-content grey lighten-4">
+				    <div class="card-content white">
 				      <div id="test4" ng-bind="tabText.firstTab">
 				      </div>
 				      <div id="test5" ng-bind="tabText.secondTab">
@@ -253,7 +91,7 @@
 
 				  <!-- map card -->
 		          <div class="card">
-		            <div id="map-card" class="card-content grey lighten-4">
+		            <div id="map-card" class="card-content white">
 		              <span class="card-title">CIDADES ATENDIDAS</span>
 		    		  <div id="map"></div>
 		            </div>
@@ -267,12 +105,12 @@
 				<ul class="collection">
 				    <li class="collection-item avatar" ng-repeat="c in comments">
 				      <img ng-src="{{c.avatar}}" alt="" class="circle comment-avatar">
-				      <span class="title" ng-bind="c.name"></span>
+				      <span class="title" ng-bind="c.name" style="font-weight: bold"></span>
 				      <p ng-bind="c.text"></p>
 				      <div class="second-comment">
 					      <img ng-src="{{c.secondAvatar}}" alt="" class="circle second-avatar">
 					      <div>
-						      <p style="color: #000"> Resposta de <span style="font-weight: bold" ng-bind="c.secondName"></span></p>
+						      <p> Resposta de <span style="font-weight: bold" ng-bind="c.secondName"></span></p>
 						      <p ng-bind="c.secondText"></p>
 					      </div>
 				      </div>
@@ -281,7 +119,7 @@
 				</ul>
 
 				<div class="center-align">
-					<a class="waves-effect waves-light btn center">CARREGAR MAIS</a>
+					<a class="waves-effect waves-light btn center btn-cadastrar">CARREGAR MAIS</a>
 				</div>
 			</section>
 		</div>
@@ -310,7 +148,7 @@
 	<!-- angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
 	<!-- files -->
-	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="app.js"></script>
 	<!-- google maps API -->
 	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAva--pR9SxDTG4HH5rQ1KN4r_23TzcLK4&callback=initMap"
   type="text/javascript"></script>
